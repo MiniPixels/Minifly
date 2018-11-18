@@ -1,19 +1,17 @@
 ﻿using Assets.Minifly.Scripts.Helpers;
 using Assets.Minifly.Scripts.WindowManager;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class InputManager : MonoBehaviour {
+public class InputManager : MonoBehaviour
+{
     private GameObjectContainer _objContainer;
     private UIModule _uiModlue;
-	void Start ()
+    void Start()
     {
         _objContainer = GameObject.Find(Strings.GameobjectContainer).GetComponent<GameObjectContainer>();
         _uiModlue = new UIModule();
-        GiveButtonsAction(); 
-	}
+        GiveButtonsAction();
+    }
 
     private void GiveButtonsAction()
     {
@@ -33,16 +31,16 @@ public class InputManager : MonoBehaviour {
         _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.QuitButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.QuitGame); });
         _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.PlayButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.PlayGame); });
         _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.HelpButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.HelpGame); });
-      
+
 
     }
 
-    private void InputController(ActionRoute actionRoute,ActionCommand command,GameObject param=null)
+    private void InputController(ActionRoute actionRoute, ActionCommand command, GameObject param = null)
     {
         switch (actionRoute)
         {
             case ActionRoute.UI:
-                UIAction(command,param);
+                UIAction(command, param);
                 break;
             case ActionRoute.GAME:
                 GameAction(command);
@@ -57,7 +55,7 @@ public class InputManager : MonoBehaviour {
     {
         switch (command)
         {
-           
+
 
         }
     }
@@ -80,6 +78,7 @@ public class InputManager : MonoBehaviour {
 
     private void UIAction(ActionCommand command, GameObject param)
     {
+
         switch (command)
         {
             case ActionCommand.OpenWindow:
@@ -90,7 +89,22 @@ public class InputManager : MonoBehaviour {
                 _uiModlue.CloseWindow(param);
                 _objContainer.SetButtonInterChargeAble(true);
                 break;
-           
+            case ActionCommand.MusicOnOff:
+                break;
+            case ActionCommand.SoundOnOff:
+                break;
+            case ActionCommand.CloudSaveOnOff:
+                break;
+            case ActionCommand.BuyNoAds:
+                break;
+            case ActionCommand.Buy50Diamonds:
+                break;
+            case ActionCommand.Buy200Diamonds:
+                break;
+            case ActionCommand.About:
+                break;
+                
         }
+
     }
 }

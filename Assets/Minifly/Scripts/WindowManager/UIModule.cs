@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Minifly.Scripts.Helpers;
+using UnityEngine;
 
 namespace Assets.Minifly.Scripts.WindowManager
 {
@@ -10,7 +11,8 @@ namespace Assets.Minifly.Scripts.WindowManager
         }
         public void OpenWindow(GameObject window)
         {
-            window.SetActive(true);
+                window.SetActive(true);
+            
         }
     }
 }

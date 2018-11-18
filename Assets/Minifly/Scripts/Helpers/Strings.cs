@@ -33,6 +33,18 @@ namespace Assets.Minifly.Scripts.Helpers
         //User Interface SubWindow Panels
         public const string FirstSubWindow = "FirstSubWindow";
         public const string SecondSubWindow = "SecondSubWindow";
+
+        //User Interface SubWindow Buttons
+        public const string GarageButton = "GarageButton";
+        public const string ShopButton = "ShopButton";
+        public const string ScoreButton = "ScoreButton";
+        public const string ProfileButton = "ProfileButton";
+        public const string SettingsButton = "SettingsButton";
+        public const string PlayButton = "PlayButton";
+        public const string QuitButton = "QuitButton";
+        public const string HelpButton = "HelpButton";
+
+
     }
     
 

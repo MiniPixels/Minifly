@@ -24,6 +24,17 @@ public class InputManager : MonoBehaviour {
         _objContainer.GetWindowsButtonByName(Strings.MessageWindow, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.MessageWindow)); });
         _objContainer.GetWindowsButtonByName(Strings.SettingsWindow, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.SettingsWindow)); });
 
+        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.ProfileButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.ProfileWindows)); });
+        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.SettingsButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.SettingsWindow)); });
+        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.ShopButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.ShopWindow)); });
+        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.ScoreButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.HighscoreWindow)); });
+        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.GarageButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.GarageWindow)); });
+
+        _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.QuitButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.QuitGame); });
+        _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.PlayButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.PlayGame); });
+        _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.HelpButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.HelpGame); });
+      
+
     }
 
     private void InputController(ActionRoute actionRoute,ActionCommand command,GameObject param=null)
@@ -46,6 +57,7 @@ public class InputManager : MonoBehaviour {
     {
         switch (command)
         {
+           
 
         }
     }
@@ -54,7 +66,15 @@ public class InputManager : MonoBehaviour {
     {
         switch (command)
         {
-
+            case ActionCommand.PlayGame:
+                Debug.Log("Play");
+                break;
+            case ActionCommand.QuitGame:
+                Debug.Log("QuitGame");
+                break;
+            case ActionCommand.HelpGame:
+                Debug.Log("HelpGame");
+                break;
         }
     }
 
@@ -63,10 +83,12 @@ public class InputManager : MonoBehaviour {
         switch (command)
         {
             case ActionCommand.OpenWindow:
-              
+                _uiModlue.OpenWindow(param);
+                _objContainer.SetButtonInterChargeAble(false);
                 break;
             case ActionCommand.CloseWindow:
                 _uiModlue.CloseWindow(param);
+                _objContainer.SetButtonInterChargeAble(true);
                 break;
            
         }

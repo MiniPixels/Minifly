@@ -7,6 +7,9 @@
     public enum ActionCommand
     {
         OpenWindow,
-        CloseWindow
+        CloseWindow,
+        PlayGame,
+        QuitGame,
+        HelpGame
     }
 }

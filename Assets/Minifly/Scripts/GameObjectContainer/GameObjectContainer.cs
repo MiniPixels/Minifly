@@ -17,16 +17,19 @@ public class GameObjectContainer : MonoBehaviour
     private Dictionary<string, List<Button>> _uiSubWindowButtons;
     private void Start()
     {
+      
         _windows = new Dictionary<string, GameObject>();
         _windowbuttons = new Dictionary<string, List<Button>>();
         _windowtexts = new Dictionary<string, List<Text>>();
         _uiSubWindowButtons = new Dictionary<string, List<Button>>(); 
         FillWindows();
+      
     }
 
    
     private void FillWindows()
     {
+      
         _windows.Add(Strings.ShopWindow, GameObject.Find(Strings.ShopWindow));
         _windows.Add(Strings.GarageWindow, GameObject.Find(Strings.GarageWindow));
         _windows.Add(Strings.HighscoreWindow, GameObject.Find(Strings.HighscoreWindow));
@@ -49,17 +52,29 @@ public class GameObjectContainer : MonoBehaviour
 
         _uiSubWindowButtons.Add(Strings.FirstSubWindow, GameObject.Find(Strings.FirstSubWindow).GetComponentsInChildren<Button>().ToList());
         _uiSubWindowButtons.Add(Strings.SecondSubWindow, GameObject.Find(Strings.SecondSubWindow).GetComponentsInChildren<Button>().ToList());
-
-        //DisableWindows();
+      
+        DisableWindows();
     }
-    
+
+
+  
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private void DisableWindows()
     {
+       
         foreach (var window in _windows)
         {
             window.Value.SetActive(false);
         }
+        
+    }
+
+    public void SetButtonInterChargeAble(bool interchargeAble)
+    {
+      
+        _uiSubWindowButtons.All(x => x.Value.All(k => { k.interactable = interchargeAble; return true; }));
+      
     }
 
     public GameObject GetWindowByName(string windowName)

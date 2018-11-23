@@ -1274,7 +1274,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1914234185462490, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689264973255356, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
+      propertyPath: m_Name
+      value: CloseMessageButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
@@ -1317,7 +1321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &380312955
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1725,7 +1729,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &542100636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1774,7 +1778,7 @@ GameObject:
   - component: {fileID: 557276347}
   - component: {fileID: 557276346}
   m_Layer: 5
-  m_Name: CloseButton
+  m_Name: CloseHighScoreButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1909,10 +1913,10 @@ RectTransform:
   m_Father: {fileID: 998676151}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 229.73, y: -462.5}
-  m_SizeDelta: {x: 435.46, y: 107.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558738736
 MonoBehaviour:
@@ -2790,10 +2794,10 @@ RectTransform:
   m_Father: {fileID: 998676151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 229.73, y: -116.9}
-  m_SizeDelta: {x: 435.46, y: 107.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &927813526
 MonoBehaviour:
@@ -3718,7 +3722,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1059672299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3845,7 +3849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1112454074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3894,7 +3898,7 @@ GameObject:
   - component: {fileID: 1137646209}
   - component: {fileID: 1137646208}
   m_Layer: 5
-  m_Name: CloseButton
+  m_Name: CloseProfileButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4135,7 +4139,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1914234185462490, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689264973255356, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
+      propertyPath: m_Name
+      value: CloseHighScoreButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
@@ -4510,7 +4518,7 @@ GameObject:
   - component: {fileID: 1299811537}
   - component: {fileID: 1299811536}
   m_Layer: 5
-  m_Name: CloseButton
+  m_Name: CloseShopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4778,7 +4786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1317338564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4941,10 +4949,10 @@ RectTransform:
   m_Father: {fileID: 998676151}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 229.73, y: -289.7}
-  m_SizeDelta: {x: 435.46, y: 107.8}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337022286
 MonoBehaviour:
@@ -4992,7 +5000,7 @@ GameObject:
   - component: {fileID: 1350011094}
   - component: {fileID: 1350011093}
   m_Layer: 5
-  m_Name: CloseButton
+  m_Name: CloseGarageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5325,7 +5333,7 @@ GameObject:
   - component: {fileID: 1576086362}
   - component: {fileID: 1576086361}
   m_Layer: 5
-  m_Name: AboutButton
+  m_Name: AboutSettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5832,12 +5840,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1914234185462490, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114588459140351610, guid: 51fa0f4686e1ace43acdfa95a0eb2e56,
         type: 2}
       propertyPath: m_Text
       value: garage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689264973255356, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
+      propertyPath: m_Name
+      value: CloseGarageButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51fa0f4686e1ace43acdfa95a0eb2e56, type: 2}
@@ -6111,7 +6123,7 @@ GameObject:
   - component: {fileID: 1678637001}
   - component: {fileID: 1678637000}
   m_Layer: 5
-  m_Name: AboutButton
+  m_Name: AbouShoptButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6296,7 +6308,7 @@ GameObject:
   - component: {fileID: 1699246559}
   - component: {fileID: 1699246558}
   m_Layer: 5
-  m_Name: CloseButton
+  m_Name: CloseMessageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7013,7 +7025,7 @@ GameObject:
   - component: {fileID: 1851810094}
   - component: {fileID: 1851810093}
   m_Layer: 5
-  m_Name: CloseButton
+  m_Name: CloseSettingsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7249,7 +7261,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1380306648043740, guid: 9d2e11feb1302cc4aaffe123759f6edc, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243969235852088, guid: 9d2e11feb1302cc4aaffe123759f6edc, type: 2}
+      propertyPath: m_Name
+      value: CloseProfileButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d2e11feb1302cc4aaffe123759f6edc, type: 2}

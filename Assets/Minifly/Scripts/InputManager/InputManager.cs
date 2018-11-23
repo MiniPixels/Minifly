@@ -1,6 +1,8 @@
 ﻿using Assets.Minifly.Scripts.Helpers;
 using Assets.Minifly.Scripts.WindowManager;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
 {
@@ -15,39 +17,28 @@ public class InputManager : MonoBehaviour
 
     private void GiveButtonsAction()
     {
-        _objContainer.GetWindowsButtonByName(Strings.ShopWindow, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.ShopWindow)); });
-        _objContainer.GetWindowsButtonByName(Strings.GarageWindow, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.GarageWindow)); });
-        _objContainer.GetWindowsButtonByName(Strings.HighscoreWindow, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.HighscoreWindow)); });
-        _objContainer.GetWindowsButtonByName(Strings.ProfileWindows, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.ProfileWindows)); });
-        _objContainer.GetWindowsButtonByName(Strings.MessageWindow, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.MessageWindow)); });
-        _objContainer.GetWindowsButtonByName(Strings.SettingsWindow, Strings.CloseButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.CloseWindow, _objContainer.GetWindowByName(Strings.SettingsWindow)); });
+        GameObjectContainer.Button.ToList().ForEach(x =>
+        x.Value.onClick.AddListener(
+            delegate
+            {
+                InputController(ActionRoute.UI, x.Value.name);
+            }));
+         }
 
-        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.ProfileButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.ProfileWindows)); });
-        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.SettingsButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.SettingsWindow)); });
-        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.ShopButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.ShopWindow)); });
-        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.ScoreButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.HighscoreWindow)); });
-        _objContainer.GetSubButtonByName(Strings.SecondSubWindow, Strings.GarageButton).onClick.AddListener(delegate { InputController(ActionRoute.UI, ActionCommand.OpenWindow, _objContainer.GetWindowByName(Strings.GarageWindow)); });
-
-        _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.QuitButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.QuitGame); });
-        _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.PlayButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.PlayGame); });
-        _objContainer.GetSubButtonByName(Strings.FirstSubWindow, Strings.HelpButton).onClick.AddListener(delegate { InputController(ActionRoute.GAME, ActionCommand.HelpGame); });
-
-
-    }
-
-    private void InputController(ActionRoute actionRoute, ActionCommand command, GameObject param = null)
+    private void InputController(ActionRoute actionRoute, string actionCommand)
     {
-        switch (actionRoute)
+        Debug.Log(actionCommand);
+        switch (actionCommand)
         {
-            case ActionRoute.UI:
-                UIAction(command, param);
+            case "PlayButton":
+                GameObjectContainer.Button[actionCommand].GetComponentInChildren<Text>().text = "Fuckign Shit";
                 break;
-            case ActionRoute.GAME:
-                GameAction(command);
+            default:
+                Debug.Log(actionCommand);
                 break;
-            case ActionRoute.DAL:
-                DALAction(command);
-                break;
+   
+              
+                
         }
     }
 
@@ -55,7 +46,13 @@ public class InputManager : MonoBehaviour
     {
         switch (command)
         {
-
+      
+            case ActionCommand.GetUserDataFromCloud:
+                break;
+            case ActionCommand.GetHighScoreFromCloud:
+                break;         
+            case ActionCommand.About:
+                break;
 
         }
     }
@@ -76,18 +73,14 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    private void UIAction(ActionCommand command, GameObject param)
+    private void UIAction(ActionCommand command,string ActionName)
     {
-
+       
         switch (command)
         {
             case ActionCommand.OpenWindow:
-                _uiModlue.OpenWindow(param);
-                _objContainer.SetButtonInterChargeAble(false);
                 break;
             case ActionCommand.CloseWindow:
-                _uiModlue.CloseWindow(param);
-                _objContainer.SetButtonInterChargeAble(true);
                 break;
             case ActionCommand.MusicOnOff:
                 break;

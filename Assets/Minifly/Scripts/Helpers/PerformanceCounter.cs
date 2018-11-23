@@ -5,7 +5,7 @@ namespace Assets.Minifly.Scripts.Helpers
     public static class PerformanceCounter
     {
         private static Stopwatch watch;
-       private static StackTrace stackTrace = new StackTrace();
+        private static StackTrace stackTrace = new StackTrace();
         public static void Start()
         {
             watch = System.Diagnostics.Stopwatch.StartNew();

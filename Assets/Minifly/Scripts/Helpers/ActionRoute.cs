@@ -18,6 +18,8 @@
         BuyNoAds,
         Buy50Diamonds,
         Buy200Diamonds,
-        About
+        About,
+        GetUserDataFromCloud,
+        GetHighScoreFromCloud
     }
 }

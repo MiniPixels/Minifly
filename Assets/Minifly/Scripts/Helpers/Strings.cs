@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assets.Minifly.Scripts.Helpers
+﻿namespace Assets.Minifly.Scripts.Helpers
 {
     public static class Strings
     {
-        
+
         //Windows
         public const string ShopWindow = "ShopWindow";
         public const string GarageWindow = "GarageWindow";
@@ -19,7 +13,7 @@ namespace Assets.Minifly.Scripts.Helpers
 
         //Managers
         public const string GameobjectContainer = "GameobjectContainer";
-        
+
         //Errors
         public const string WindowNotFound = "WindowNotFound";
         public const string ButtonsNotFound = "ButtonsNotFound";
@@ -45,7 +39,18 @@ namespace Assets.Minifly.Scripts.Helpers
         public const string HelpButton = "HelpButton";
 
 
+        //ShopWindow Butttons
+        public const string BuyNoAdsButton = "BuyNoAdsButton";
+        public const string Buy50DiamondsButton = "Buy50DiamondsButton";
+        public const string Buy200DiamondsButton = "Buy200DiamondsButton";
+
+
+        //SettingsWindow Buttons
+        public const string MusicOnOffButton = "MusicOnOffButton";
+        public const string SoundOnOffButton = "SoundOnOffButton";
+        public const string CloudSaveOnOffButton = "CloudSaveOnOffButton";
+
     }
-    
+
 
 }
